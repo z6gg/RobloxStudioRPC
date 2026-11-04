@@ -64,4 +64,4 @@ pnpm build && pnpm inject
 
 ---
 
-*Vibe coded with Claude Sonnet 5.*
+*Human directed, made with Claude Sonnet 5.*
