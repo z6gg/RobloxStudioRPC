@@ -1,44 +1,53 @@
 # RobloxStudioRPC
 
-vencord plugin that gives you rich presence for roblox studio (when it's open)
+A Vencord plugin that gives you Discord rich presence for Roblox Studio while it's open.
 
 ## Features
 
-- displays roblox studio presence when it's open, and optionally the place name you're editing
+- Displays Roblox Studio presence when it's open, and optionally the place name you're editing.
 
-## How it works
-1. every 15 seconds, the plugin checks if RobloxStudioBeta.exe is open
-2. if roblox studio is running, the plugin reads the window name and strips the place name from it (by default it's PLACENAME - Roblox Studio)
-3. status is set in discord using an application id with the same name and icon as roblox studio (found in index.ts)
+## How It Works
+
+1. Every 15 seconds, the plugin checks whether `RobloxStudioBeta.exe` is running.
+2. If Roblox Studio is running, the plugin reads the window title and strips the place name from it (by default the title is `PLACENAME - Roblox Studio`).
+3. The status is set in Discord using an application ID with the same name and icon as Roblox Studio (found in `index.ts`).
 
 ## Installation
+
 ### Auto Install (Recommended)
-1. download the installer script in the releases, place it somewhere you will keep vencord in
-2. run it, the first run might take a few minutes,
-3. wait until you get prompted to choose which discord version you wanna patch, if you don't know just click enter
 
-discord will then close if it was open, and you're done
+1. Download the installer script from the releases and place it somewhere you will keep Vencord.
+2. Run it. The first run might take a few minutes.
+3. Wait until you are prompted to choose which Discord version to patch. If you don't know, just press Enter.
 
-go to your plugins then click "Show All" in the filters section and choose "Show Userplugins" where you'll find the plugin
+Discord will then close if it was open, and you're done.
 
-run the same script to receive an update if the plugin ever gets updated
+Go to your plugins, click "Show All" in the filters section, and choose "Show Userplugins". You'll find the plugin there.
 
-don't move or delete the created folder
+Run the same script to receive an update if the plugin is ever updated.
+
+Don't move or delete the created folder.
 
 ### Manual Install
-1. choose where you want vencord to be and run a command prompt there
-2. install needed tools:
-```
+
+1. Choose where you want Vencord to be and open a command prompt there.
+2. Install the needed tools:
+
+```text
 winget install --id Git.Git -e --source winget
 winget install --id OpenJS.NodeJS.LTS -e --source winget
 ```
-3. restart cmd
-4. install another needed tool:
-```
+
+3. Restart the command prompt.
+4. Install one more needed tool:
+
+```text
 npm install -g pnpm
 ```
-5. run the following commands in order:
-```
+
+5. Run the following commands in order:
+
+```text
 mkdir VencordBuild
 cd VencordBuild
 git clone https://github.com/Vendicated/Vencord.git
@@ -50,13 +59,15 @@ git clone https://github.com/z6gg/RobloxStudioRPC.git
 cd ../..
 pnpm build && pnpm inject
 ```
-6. you will reach a point where it prompts you which discord version you wanna patch, choose your desired one
-7. discord will close if it was open, open it back up and go to your plugins then click "Show All" in the filters and choose "Show Userplugins" where you'll find the plugin
 
-don't move or delete the created folder
+6. You will reach a point where it prompts you for which Discord version to patch. Choose the one you want.
+7. Discord will close if it was open. Open it back up, go to your plugins, click "Show All" in the filters, and choose "Show Userplugins". You'll find the plugin there.
 
-if the plugin ever gets updated, cd into your `src\userplugins\RobloxStudioRPC` and repeat the following commands:
-```
+Don't move or delete the created folder.
+
+If the plugin is ever updated, `cd` into `src\userplugins\RobloxStudioRPC` and run:
+
+```text
 git pull
 cd ../../..
 pnpm build && pnpm inject
@@ -64,4 +75,4 @@ pnpm build && pnpm inject
 
 ---
 
-*Human directed, made with Claude Sonnet 5.*
+*Human directed, made with Claude Sonnet 5.*
